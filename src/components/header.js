@@ -1,42 +1,97 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
+import { flexMC } from '../assets/global'
+import Burger from './burger'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Wrapper = styled.header`
+    ${flexMC}
+`
+
+const MenuWrapper = styled(Link)`
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: ${({ theme }) => theme.color.grey3};
+    position: relative;
+    transition: 0.2s color ease-in, 0.2s font-weight ease-in;
+    & ~ a {
+        margin-top: 5rem;
+    }
+    @media (min-width: ${({ theme }) => theme.bp.sm}px) {
+        font-size: 1.6rem;
+        & ~ a {
+            margin-top: 0;
+            margin-left: 10rem;
+        }
+    }
+    &.active,
+    &:hover {
+        color: ${({ theme }) => theme.color.black};
+        font-weight: bold;
+    }
+`
+
+const NavWrapper = styled.nav`
+    position: fixed;
+    background: ${({ theme }) => theme.color.white};
+    ${flexMC};
+    flex-direction: column;
+    top: 0;
+    left: ${({ open }) => (open ? '0' : '-100%')};
+    width: 100%;
+    height: 100%;
+    transition: 0.2s left ease-in-out;
+    @media (min-width: ${({ theme }) => theme.bp.sm}px) {
+        height: ${({ theme }) => theme.size.headerPc};
+        left: 0;
+        flex-direction: row;
+    }
+`
+
+const Header = () => {
+    const [isBurgerOpen, setBurger] = useState(false)
+    const menuList = [
+        {
+            to: '/',
+            label: 'Main',
+        },
+        {
+            to: '/work',
+            label: 'Work',
+        },
+        {
+            to: '/info',
+            label: 'Info',
+        },
+    ]
+    return (
+        <Wrapper>
+            <Burger
+                onClick={() => setBurger(!isBurgerOpen)}
+                isOpen={isBurgerOpen}
+            />
+            <NavWrapper open={isBurgerOpen}>
+                {menuList.map((ele, idx) => (
+                    <MenuWrapper
+                        key={`${ele.label}-${idx}`}
+                        to={ele.to}
+                        activeClassName="active"
+                    >
+                        {ele.label}
+                    </MenuWrapper>
+                ))}
+            </NavWrapper>
+        </Wrapper>
+    )
+}
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+    siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+    siteTitle: ``,
 }
 
 export default Header
