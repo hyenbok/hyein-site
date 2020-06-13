@@ -34,6 +34,7 @@ const MenuWrapper = styled(Link)`
 
 const NavWrapper = styled.nav`
     position: fixed;
+    z-index: 19;
     background: ${({ theme }) => theme.color.white};
     ${flexMC};
     flex-direction: column;

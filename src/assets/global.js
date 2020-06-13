@@ -6,6 +6,25 @@ const GlobalStyles = createGlobalStyle`
     font-size: 10px;
     overflow-x: hidden;
   }
+
+  *, :before, :after {
+    box-sizing: border-box;
+  }
+
+  input, textarea {
+    padding: 0;
+    border: none;
+    outline: none;
+  }
+
+  button {
+    padding: 0;
+    border: none;
+  }
+
+  p {
+    margin: 0;
+  }
 `
 
 const flexMC = css`

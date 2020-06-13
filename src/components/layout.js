@@ -10,6 +10,7 @@ import '../assets/normalize.css'
 import Header from './header'
 
 const LayoutWrapper = styled.div`
+    margin-top: ${({ theme }) => theme.size.headerMobile};
     @media (min-width: ${({ theme }) => theme.bp.sm}px) {
         margin-top: ${({ theme }) => theme.size.headerPc};
     }

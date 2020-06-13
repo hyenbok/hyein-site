@@ -2,10 +2,17 @@ export const theme = {
     color: {
         white: '#fff',
         black: '#000',
-        lightGray: '#ececec',
-        purple: '#744c9d',
+        lightGrey: '#ececec',
+        dustGreen: '#E7EAE4',
+        lighterGrey: '#F9F9F9',
+        grey1: '#333333',
+        grey2: '#4F4F4F',
+        grey3: '#828282',
+        grey4: '#BDBDBD',
+        grey6: '#F2F2F2',
     },
     size: {
+        headerMobile: '6rem',
         headerPc: '7.2rem',
     },
     bp: {

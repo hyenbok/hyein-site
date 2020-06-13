@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 const StyledBurger = styled.div`
     cursor: pointer;
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     position: fixed;
     top: 15px;
     right: 20px;
@@ -16,7 +16,7 @@ const StyledBurger = styled.div`
         display: none;
     }
     div {
-        width: 4rem;
+        width: 3rem;
         height: 0.15rem;
         background-color: ${({ theme }) => theme.color.black};
         transform-origin: 1px;
