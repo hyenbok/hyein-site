@@ -13,13 +13,18 @@ const Wrapper = styled.div`
     }
 `
 
-const FlexBox = ({ flexStyles, children }) => {
-    return <Wrapper props={flexStyles}>{children}</Wrapper>
+const FlexBox = ({ className, flexStyles, children }) => {
+    return (
+        <Wrapper className={className} props={flexStyles}>
+            {children}
+        </Wrapper>
+    )
 }
 
 FlexBox.propTypes = {
     children: PropTypes.node.isRequired,
     flexStyles: PropTypes.object,
+    className: PropTypes.string,
 }
 
 FlexBox.defaultProps = {
@@ -29,6 +34,7 @@ FlexBox.defaultProps = {
         flexDirection: 'row',
         flexDirectionPc: 'row',
     },
+    className: '',
 }
 
 export default FlexBox

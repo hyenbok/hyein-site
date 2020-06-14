@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Noto Serif KR', sans-serif;
     font-size: 10px;
     overflow-x: hidden;
+    min-height: 100vh;
   }
 
   *, :before, :after {
@@ -20,6 +21,26 @@ const GlobalStyles = createGlobalStyle`
   button {
     padding: 0;
     border: none;
+  }
+
+  a {
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    text-decoration: none;
+    border: 0;
+    text-decoration: inherit;
+
+
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+        outline: none;
+        box-shadow: none;
+    }
   }
 
   p {

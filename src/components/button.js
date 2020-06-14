@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const Wrapper = styled.button`
     background: ${({ theme }) => theme.color.grey4};
     border-radius: 0.8rem;
+    cursor: pointer;
     padding: 1.6rem 6.4rem;
     color: ${({ theme }) => theme.color.grey6};
     line-height: 2.4rem;
