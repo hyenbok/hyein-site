@@ -18,7 +18,7 @@ const MenuWrapper = styled(Link)`
     & ~ a {
         margin-top: 5rem;
     }
-    @media (min-width: ${({ theme }) => theme.bp.sm}px) {
+    @media (min-width: ${({ theme }) => theme.bp.md}px) {
         font-size: 1.6rem;
         & ~ a {
             margin-top: 0;
@@ -43,7 +43,7 @@ const NavWrapper = styled.nav`
     width: 100%;
     height: 100%;
     transition: 0.2s left ease-in-out;
-    @media (min-width: ${({ theme }) => theme.bp.sm}px) {
+    @media (min-width: ${({ theme }) => theme.bp.md}px) {
         height: ${({ theme }) => theme.size.headerPc};
         left: 0;
         flex-direction: row;

@@ -12,7 +12,7 @@ const StyledBurger = styled.div`
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
-    @media (min-width: ${({ theme }) => theme.bp.sm}px) {
+    @media (min-width: ${({ theme }) => theme.bp.md}px) {
         display: none;
     }
     div {

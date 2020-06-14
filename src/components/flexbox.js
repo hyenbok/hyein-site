@@ -8,7 +8,7 @@ const Wrapper = styled.div`
     justify-content: ${({ props }) => props.justifyContent};
     flex-direction: ${({ props }) => props.flexDirection};
 
-    @media (min-width: ${({ theme }) => theme.bp.sm}px) {
+    @media (min-width: ${({ theme }) => theme.bp.md}px) {
         flex-direction: ${({ props }) => props.flexDirectionPc};
     }
 `

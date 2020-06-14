@@ -12,6 +12,10 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  main {
+    padding: 0 1.5rem;
+  }
+
   input, textarea {
     padding: 0;
     border: none;
@@ -46,6 +50,39 @@ const GlobalStyles = createGlobalStyle`
   p {
     margin: 0;
   }
+
+  .pl-none {
+        padding-left: 0 !important;
+    }
+
+    .pr-none {
+        padding-right: 0 !important;
+    }
+
+    .p-pl-none {
+        @media ${({ theme }) => theme.bp.md} {
+            padding-left: 0 !important;
+        }
+    }
+
+.p-pr-none {
+	@media ${({ theme }) => theme.bp.md}  {
+		padding-right: 0 !important;
+	}
+}
+
+.pl-pr-none { 
+  	padding-left: 0 !important;
+  	padding-right: 0 !important;
+}
+
+.m-pl-pr-none {
+	@media ${({ theme }) => theme.bp.md}  {
+		padding-left: 0 !important;
+  	    padding-right: 0 !important;
+	}
+}
+
 `
 
 const flexMC = css`

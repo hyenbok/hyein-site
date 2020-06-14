@@ -1,10 +1,9 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
-
+import { Container, Col, Row } from 'reactstrap'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Container from '../components/container'
 import Input from '../components/input'
 import Textarea from '../components/Textarea'
 import Button from '../components/Button'
@@ -33,11 +32,12 @@ const ContentWrapper = styled.div`
     .bg-deco {
         display: none;
     }
-    @media (min-width: ${({ theme }) => theme.bp.sm}px) {
+    @media (min-width: ${({ theme }) => theme.bp.md}px) {
         display: flex;
-        align-content: center;
-        justify-content: space-evenly;
+        align-items: center;
+        justify-content: center;
         padding: 4.8rem 0;
+        min-height: calc(100vh - ${props => props.theme.size.headerPc});
 
         .bg-deco {
             display: block;
@@ -83,8 +83,7 @@ const ImgWrapper = styled.div`
         }
     }
 
-    @media (min-width: ${({ theme }) => theme.bp.sm}px) {
-        margin-right: 5%;
+    @media (min-width: ${({ theme }) => theme.bp.md}px) {
         margin-top: 3.5rem;
         .img-deco {
             display: table;
@@ -129,7 +128,7 @@ const InfoTextWrapper = styled.div`
         margin-bottom: 3.2rem;
     }
 
-    @media (min-width: ${({ theme }) => theme.bp.sm}px) {
+    @media (min-width: ${({ theme }) => theme.bp.md}px) {
         text-align: left;
         h1 {
             margin: 0;
@@ -155,77 +154,87 @@ const InfoPage = () => {
     return (
         <Layout>
             <SEO title="Info" />
-            <Container>
-                <ContentWrapper>
-                    <span className="bg-deco"></span>
-                    <span className="bg-deco"></span>
-                    <span className="bg-deco"></span>
-                    <span className="bg-deco"></span>
-                    <span className="bg-deco"></span>
-                    <ImgWrapper>
-                        <span className="img-deco">
-                            <img
-                                src={ownerImg}
-                                alt="site owner image, holding plants, smiling"
-                            />
-                        </span>
-                    </ImgWrapper>
-                    <InfoTextWrapper>
-                        <h1>Hyein Jeong</h1>
-                        <p className="description">
-                            currently working as a freelance photographer in
-                            Seoul, South Korea
-                        </p>
-                        <FlexBox
-                            flexStyles={{
-                                flexDirection: 'column',
-                                flexDirectionPc: 'row',
-                            }}
-                        >
-                            <p className="sns-box">
-                                Contact
-                                <b>
-                                    <a href="mailto:invely20@naver.com">
-                                        invely20@naver.com
-                                    </a>
-                                </b>
-                            </p>
-                            <p className="sns-box">
-                                Blog
-                                <b>
-                                    <a
-                                        href="https://blog.naver.com/invely20"
-                                        target="_blank"
+            <ContentWrapper>
+                <span className="bg-deco"></span>
+                <span className="bg-deco"></span>
+                <span className="bg-deco"></span>
+                <span className="bg-deco"></span>
+                <span className="bg-deco"></span>
+                <Container>
+                    <Row>
+                        <Col className="m-pl-pr-none pl-none" xs="12" md="6">
+                            <ImgWrapper>
+                                <span className="img-deco">
+                                    <img
+                                        src={ownerImg}
+                                        alt="site owner image, holding plants, smiling"
+                                    />
+                                </span>
+                            </ImgWrapper>
+                        </Col>
+                        <Col className="pl-pr-none" xs="12" md="6">
+                            <InfoTextWrapper>
+                                <h1>Hyein Jeong</h1>
+                                <p className="description">
+                                    currently working as a freelance
+                                    photographer in Seoul, South Korea
+                                </p>
+                                <Row>
+                                    <Col xs="12" md="6">
+                                        <p className="sns-box">
+                                            Contact
+                                            <b>
+                                                <a href="mailto:invely20@naver.com">
+                                                    invely20@naver.com
+                                                </a>
+                                            </b>
+                                        </p>
+                                    </Col>
+                                    <Col xs="12" md="6">
+                                        <p className="sns-box">
+                                            Blog
+                                            <b>
+                                                <a
+                                                    href="https://blog.naver.com/invely20"
+                                                    target="_blank"
+                                                >
+                                                    blog.naver.com/invely20
+                                                </a>
+                                            </b>
+                                        </p>
+                                    </Col>
+                                </Row>
+                                <span className="deco-line"></span>
+                                <form>
+                                    <Row>
+                                        <Col xs="12" md="6">
+                                            <Input placeholder="Name" />
+                                        </Col>
+                                        <Col xs="12" md="6">
+                                            <Input
+                                                placeholder="Email"
+                                                type="email"
+                                            />
+                                        </Col>
+                                    </Row>
+                                    <Input placeholder="Subject" />
+                                    <Textarea
+                                        minHeight={'15.6rem'}
+                                        placeholder="Message"
+                                    />
+                                    <FlexBox
+                                        flexStyles={{
+                                            justifyContent: 'center',
+                                        }}
                                     >
-                                        blog.naver.com/invely20
-                                    </a>
-                                </b>
-                            </p>
-                        </FlexBox>
-                        <span className="deco-line"></span>
-                        <form>
-                            <FlexBox
-                                className="input-flexbox"
-                                flexStyles={{
-                                    flexDirection: 'column',
-                                    flexDirectionPc: 'row',
-                                }}
-                            >
-                                <Input placeholder="Name" />
-                                <Input placeholder="Email" type="email" />
-                            </FlexBox>
-                            <Input placeholder="Subject" />
-                            <Textarea
-                                minHeight={'15.6rem'}
-                                placeholder="Message"
-                            />
-                            <FlexBox flexStyles={{ justifyContent: 'center' }}>
-                                <Button>send</Button>
-                            </FlexBox>
-                        </form>
-                    </InfoTextWrapper>
-                </ContentWrapper>
-            </Container>
+                                        <Button>send</Button>
+                                    </FlexBox>
+                                </form>
+                            </InfoTextWrapper>
+                        </Col>
+                    </Row>
+                </Container>
+            </ContentWrapper>
         </Layout>
     )
 }

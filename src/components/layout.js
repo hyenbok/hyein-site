@@ -7,11 +7,12 @@ import { GlobalStyles } from '../assets/global'
 
 import 'typeface-noto-serif-kr'
 import '../assets/normalize.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from './header'
 
 const LayoutWrapper = styled.div`
     margin-top: ${({ theme }) => theme.size.headerMobile};
-    @media (min-width: ${({ theme }) => theme.bp.sm}px) {
+    @media (min-width: ${({ theme }) => theme.bp.md}px) {
         margin-top: ${({ theme }) => theme.size.headerPc};
     }
 `

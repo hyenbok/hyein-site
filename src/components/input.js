@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.input`
-    background: ${({ theme }) => theme.color.lighterGrey};
+    background: ${({ theme }) => theme.color.grey7};
     border-bottom: 1px solid ${({ theme }) => theme.color.grey3};
     color: ${({ theme }) => theme.color.grey1};
     font-size: 1.4rem;
