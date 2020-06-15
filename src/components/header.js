@@ -10,6 +10,7 @@ const Wrapper = styled.header`
 `
 
 const MenuWrapper = styled(Link)`
+    font-weight: bold;
     font-size: 2rem;
     line-height: 2.4rem;
     color: ${({ theme }) => theme.color.grey3};
@@ -28,7 +29,6 @@ const MenuWrapper = styled(Link)`
     &.active,
     &:hover {
         color: ${({ theme }) => theme.color.black};
-        font-weight: bold;
     }
 `
 

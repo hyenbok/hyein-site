@@ -1,5 +1,8 @@
 import { createGlobalStyle, css } from 'styled-components'
 
+import bgMobile from '../images/bg-mobile.jpg'
+import bg from '../images/bg.jpg'
+
 const GlobalStyles = createGlobalStyle`
   html, body {
     font-family: 'Noto Serif KR', sans-serif;
@@ -8,12 +11,21 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
   }
 
-  *, :before, :after {
-    box-sizing: border-box;
+  body {
+    &.has-bg {
+      background-image: url(${bgMobile});
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: bottom center;
+
+      @media (min-width: ${({ theme }) => theme.bp.md}px) {
+        background-image: url(${bg});
+      }
+    }
   }
 
-  main {
-    padding: 0 1.5rem;
+  *, :before, :after {
+    box-sizing: border-box;
   }
 
   input, textarea {
@@ -53,6 +65,13 @@ const GlobalStyles = createGlobalStyle`
 
   p {
     margin: 0;
+  }
+
+  .container {
+    & > .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   .pl-none {

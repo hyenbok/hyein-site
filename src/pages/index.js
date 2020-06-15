@@ -1,34 +1,59 @@
-import React from "react"
-import styled from "styled-components"
-import { Link } from "gatsby"
+import React, { useEffect } from 'react'
+import styled from 'styled-components'
+import { Link } from 'gatsby'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import { centerAlign, flexMC } from '../assets/global'
 
-const Container = styled.div`
-  margin: 3rem auto;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+const TextBox = styled.div`
+    ${flexMC};
+    flex-direction: column;
+    padding-top: 4rem;
+    p {
+        font-weight: bold;
+        font-size: 1.6rem;
+        line-height: 4.2rem;
+        position: relative;
+
+        &:before {
+            content: '';
+            display: block;
+            background: white;
+            width: 120%;
+            height: 50%;
+            ${centerAlign};
+            top: 75%;
+            z-index: -1;
+        }
+    }
+
+    @media (min-width: ${({ theme }) => theme.bp.md}px) {
+        padding-top: 9rem;
+
+        p {
+            font-size: 2rem;
+        }
+    }
 `
 
-const IndexPage = () => (
-  <Layout>
-    <Container>
-    <SEO title="Home" meta={[{d:'asfd', a: 'df'}]}/>
-    <h1>Hi people</h1>
-    <h2>안녕</h2>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    </Container>
-  </Layout>
-)
+const IndexPage = () => {
+    useEffect(() => {
+        document.body.classList.add('has-bg')
+
+        return () => {
+            document.body.classList.remove('has-bg')
+        }
+    }, [])
+    return (
+        <Layout>
+            <SEO title="Home" meta={[{ d: 'asfd', a: 'df' }]} />
+            <TextBox>
+                <p>Hello, I'm Hyein</p>
+                <p>Landscape designer</p>
+            </TextBox>
+        </Layout>
+    )
+}
 
 export default IndexPage
