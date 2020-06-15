@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
-import { Link } from 'gatsby'
-import { Container, Col, Row } from 'reactstrap'
+import { Container, Col, Row, Spinner, Alert } from 'reactstrap'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Input from '../components/input'
-import Textarea from '../components/Textarea'
-import Button from '../components/Button'
-import FlexBox from '../components/FlexBox'
+import Textarea from '../components/textarea'
+import Button from '../components/button'
+import FlexBox from '../components/flexBox'
+import { toast } from 'react-toastify'
 import ownerImg from '../images/owner.png'
+
+const config = {
+    script:
+        'https://script.google.com/macros/s/AKfycbxpAdVHU8UEqe-9C71vEHqlBmNcE_Q6XNB_jP8U/exec',
+    sheet: 'responses',
+    // email: '',
+}
 
 function devideBgDeco() {
     let styles = ''
@@ -151,6 +158,58 @@ const InfoTextWrapper = styled.div`
 `
 
 const InfoPage = () => {
+    const [form, setForm] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+    })
+    const [isSending, setLoader] = useState(false)
+
+    const handleForm = e => {
+        e.preventDefault()
+        setLoader(true)
+        const xhr = new XMLHttpRequest()
+        xhr.open('POST', config.script)
+        xhr.setRequestHeader(
+            'Content-Type',
+            'application/x-www-form-urlencoded'
+        )
+
+        xhr.onload = function () {
+            setLoader(false)
+            if (xhr.status === 200 || xhr.status === 201) {
+                console.log(xhr.responseText)
+                toast.dark('Thank you!', {
+                    position: 'top-center',
+                    autoClose: 2000,
+                })
+            } else {
+                console.error(xhr.responseText)
+                toast.error('Failed...', {
+                    position: 'top-center',
+                    autoClose: 2000,
+                })
+            }
+        }
+
+        const encoded = Object.keys(form)
+            .map(k => {
+                return `${encodeURIComponent(k)}=${encodeURIComponent(form[k])}`
+            })
+            .join('&')
+
+        xhr.send(encoded)
+        return true
+    }
+
+    const handleChange = e => {
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value,
+        })
+    }
+
     return (
         <Layout>
             <SEO title="Info" />
@@ -205,29 +264,59 @@ const InfoPage = () => {
                                     </Col>
                                 </Row>
                                 <span className="deco-line"></span>
-                                <form>
+                                <form
+                                    className="gform"
+                                    data-email="contacthyein@gmail.com"
+                                    onSubmit={handleForm}
+                                >
                                     <Row>
                                         <Col xs="12" md="6">
-                                            <Input placeholder="Name" />
+                                            <Input
+                                                placeholder="Name"
+                                                name="name"
+                                                value={form.name}
+                                                onChange={handleChange}
+                                                required
+                                            />
                                         </Col>
                                         <Col xs="12" md="6">
                                             <Input
                                                 placeholder="Email"
                                                 type="email"
+                                                name="email"
+                                                value={form.email}
+                                                onChange={handleChange}
+                                                required
                                             />
                                         </Col>
                                     </Row>
-                                    <Input placeholder="Subject" />
+                                    <Input
+                                        placeholder="Subject"
+                                        name="subject"
+                                        value={form.subject}
+                                        onChange={handleChange}
+                                        required
+                                    />
                                     <Textarea
                                         minHeight={'15.6rem'}
                                         placeholder="Message"
+                                        name="message"
+                                        value={form.message}
+                                        onChange={handleChange}
+                                        required
                                     />
                                     <FlexBox
                                         flexStyles={{
                                             justifyContent: 'center',
                                         }}
                                     >
-                                        <Button>send</Button>
+                                        <Button>
+                                            {isSending ? (
+                                                <Spinner color="light" />
+                                            ) : (
+                                                'send'
+                                            )}
+                                        </Button>
                                     </FlexBox>
                                 </form>
                             </InfoTextWrapper>

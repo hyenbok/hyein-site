@@ -6,7 +6,10 @@ const Wrapper = styled.button`
     background: ${({ theme }) => theme.color.grey4};
     border-radius: 0.8rem;
     cursor: pointer;
-    padding: 1.6rem 5rem;
+    padding: 1.6rem 0;
+    width: 100%;
+    max-width: 15.8rem;
+    text-align: center;
     color: ${({ theme }) => theme.color.grey6};
     line-height: 2.4rem;
     font-size: 1.6rem;

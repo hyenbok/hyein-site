@@ -4,10 +4,12 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider } from 'styled-components'
 import { theme } from '../assets/theme'
 import { GlobalStyles } from '../assets/global'
+import { ToastContainer } from 'react-toastify'
 
 import 'typeface-noto-serif-kr'
 import '../assets/normalize.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'react-toastify/dist/ReactToastify.css'
 import Header from './header'
 
 const LayoutWrapper = styled.div`
@@ -35,6 +37,7 @@ const Layout = ({ children }) => {
             <LayoutWrapper>
                 <main>{children}</main>
             </LayoutWrapper>
+            <ToastContainer />
         </ThemeProvider>
     )
 }

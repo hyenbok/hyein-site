@@ -25,6 +25,10 @@ const GlobalStyles = createGlobalStyle`
   button {
     padding: 0;
     border: none;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   a {
@@ -81,6 +85,10 @@ const GlobalStyles = createGlobalStyle`
 		padding-left: 0 !important;
   	    padding-right: 0 !important;
 	}
+}
+
+.Toastify__toast-container {
+  font-size: 1.6rem;
 }
 
 `
