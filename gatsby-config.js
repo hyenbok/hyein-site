@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: `Hyein Jeong | Landscape Designer`,
-        description: `조경 디자인을 하고있는 정혜인의 포트폴리오 사이트입니다.`,
+        description: `A portfolio site for hyein, landscape designer`,
         author: `mjworld`,
     },
     plugins: [
@@ -12,13 +12,6 @@ module.exports = {
             options: {
                 name: `images`,
                 path: `${__dirname}/src/images`,
-            },
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: `${__dirname}/src/markdown-pages`,
-                name: `markdown-pages`,
             },
         },
         `gatsby-plugin-styled-components`,
