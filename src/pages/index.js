@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react'
 
 import styled from 'styled-components'
-import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { centerAlign, flexMC } from '../assets/global'
 
 const TextBox = styled.div`
-    ${flexMC};
+    display: flex;
+    align-items: center;
     flex-direction: column;
     padding-top: 4rem;
+
     p {
         font-weight: bold;
         font-size: 1.6rem;

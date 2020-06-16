@@ -2,8 +2,8 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import { Container, Row, Col } from 'reactstrap'
-import { Link } from 'gatsby'
+import { Container } from 'reactstrap'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { centerAlign } from '../assets/global'
 import Layout from '../components/layout'
@@ -93,7 +93,7 @@ const WorkPage = () => {
                 <WorkWrapper>
                     {data.allFile.edges.map((image, idx) => (
                         <Work key={image.node.base.split('.')[0]}>
-                            <Link
+                            <AniLink
                                 to={`/work/product${
                                     image.node.base.split('.')[0]
                                 }`}
@@ -106,7 +106,7 @@ const WorkPage = () => {
                                     <h2 className="title-num">#{idx + 1}</h2>
                                     <h3 className="title">프로젝트 이름</h3>
                                 </div>
-                            </Link>
+                            </AniLink>
                         </Work>
                     ))}
                 </WorkWrapper>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
-import { Container, Col, Row, Spinner, Alert } from 'reactstrap'
+import { Container, Col, Row, Spinner } from 'reactstrap'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Input from '../components/input'
@@ -36,6 +36,7 @@ function devideBgDeco() {
 const ContentWrapper = styled.div`
     padding: 2rem 0;
     position: relative;
+
     .bg-deco {
         display: none;
     }
@@ -101,6 +102,7 @@ const ImgWrapper = styled.div`
 const InfoTextWrapper = styled.div`
     color: ${({ theme }) => theme.color.grey1};
     text-align: center;
+
     .description {
         font-size: 1.2rem;
         line-height: 2.4rem;
@@ -235,16 +237,16 @@ const InfoPage = () => {
                             <InfoTextWrapper>
                                 <h1>Hyein Jeong</h1>
                                 <p className="description">
-                                    currently working as a freelance
-                                    photographer in Seoul, South Korea
+                                    currently working as a landscape designer in
+                                    Seoul, South Korea
                                 </p>
                                 <Row>
                                     <Col xs="12" md="6">
                                         <p className="sns-box">
                                             Contact
                                             <b>
-                                                <a href="mailto:invely20@naver.com">
-                                                    invely20@naver.com
+                                                <a href="mailto:contacthyein@gmail.com">
+                                                    contacthyein@gmail.com
                                                 </a>
                                             </b>
                                         </p>

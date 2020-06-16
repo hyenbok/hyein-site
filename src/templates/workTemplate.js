@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import Img from 'gatsby-image'
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
 import styled from 'styled-components'
 import {
@@ -29,7 +29,7 @@ const TemplateWrapper = styled.div`
     }
 `
 
-const GoBackWrapper = styled(Link)`
+const GoBackWrapper = styled(AniLink)`
     cursor: pointer;
     display: inline-flex;
     align-items: center;

@@ -1,12 +1,12 @@
 module.exports = {
     siteMetadata: {
-        title: `Gatsby Default Starter`,
-        description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-        author: `@gatsbyjs`,
-        test: 'asdf',
+        title: `Hyein Jeong | Landscape Designer`,
+        description: `조경 디자인을 하고있는 정혜인의 포트폴리오 사이트입니다.`,
+        author: `mjworld`,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-transition-link`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -21,7 +21,6 @@ module.exports = {
                 name: `markdown-pages`,
             },
         },
-        `gatsby-transformer-remark`,
         `gatsby-plugin-styled-components`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
@@ -31,8 +30,8 @@ module.exports = {
                 name: `gatsby-starter-default`,
                 short_name: `starter`,
                 start_url: `/`,
-                background_color: `#663399`,
-                theme_color: `#663399`,
+                background_color: `#E7EAE4`,
+                theme_color: `#E7EAE4`,
                 display: `minimal-ui`,
                 icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
             },

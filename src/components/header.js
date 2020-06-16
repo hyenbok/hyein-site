@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import styled from 'styled-components'
 import { flexMC } from '../assets/global'
 import Burger from './burger'
@@ -9,7 +9,7 @@ const Wrapper = styled.header`
     ${flexMC}
 `
 
-const MenuWrapper = styled(Link)`
+const MenuWrapper = styled(AniLink)`
     font-weight: bold;
     font-size: 2rem;
     line-height: 2.4rem;
@@ -78,6 +78,9 @@ const Header = () => {
                         key={`${ele.label}-${idx}`}
                         to={ele.to}
                         activeClassName="active"
+                        partiallyActive={true}
+                        paintDrip
+                        hex="#E7EAE4"
                     >
                         {ele.label}
                     </MenuWrapper>
