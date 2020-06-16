@@ -2,6 +2,7 @@ import { createGlobalStyle, css } from 'styled-components'
 
 import bgMobile from '../images/bg-mobile.jpg'
 import bg from '../images/bg.jpg'
+import carouselPrevArrow from '../images/carousel-prev.svg'
 
 const GlobalStyles = createGlobalStyle`
   html, body {
@@ -108,6 +109,14 @@ const GlobalStyles = createGlobalStyle`
 
 .Toastify__toast-container {
   font-size: 1.6rem;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-image: url(${carouselPrevArrow});
+}
+
+.carousel-control-next-icon {
+  transform: rotate(180deg);
 }
 
 `
