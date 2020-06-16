@@ -85,7 +85,6 @@ const WorkPage = () => {
         }
     `)
 
-    console.log(data)
     return (
         <>
             <SEO title="Work" />

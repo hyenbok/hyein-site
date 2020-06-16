@@ -11,7 +11,6 @@ import {
     Carousel,
     CarouselItem,
     CarouselControl,
-    CarouselIndicators,
 } from 'reactstrap'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -160,7 +159,6 @@ const WorkTemplate = props => {
                 onExited={() => setAnimating(false)}
                 key={item.node.base.split('.')[0]}
             >
-                {console.log(item)}
                 <div style={{ width: '70% ', margin: '0 auto' }}>
                     <Img
                         fluid={item.node.childImageSharp.fluid}
@@ -196,11 +194,6 @@ const WorkTemplate = props => {
                                     next={next}
                                     previous={previous}
                                 >
-                                    <CarouselIndicators
-                                        items={images}
-                                        activeIndex={activeIndex}
-                                        onClickHandler={goToIndex}
-                                    />
                                     {slides}
                                     <CarouselControl
                                         direction="prev"

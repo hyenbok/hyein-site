@@ -181,13 +181,11 @@ const InfoPage = () => {
         xhr.onload = function () {
             setLoader(false)
             if (xhr.status === 200 || xhr.status === 201) {
-                console.log(xhr.responseText)
                 toast.dark('Thank you!', {
                     position: 'top-center',
                     autoClose: 2000,
                 })
             } else {
-                console.error(xhr.responseText)
                 toast.error('Failed...', {
                     position: 'top-center',
                     autoClose: 2000,
