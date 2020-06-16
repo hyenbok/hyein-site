@@ -6,7 +6,7 @@ import SEO from '../components/seo'
 import Input from '../components/input'
 import Textarea from '../components/textarea'
 import Button from '../components/button'
-import FlexBox from '../components/flexBox'
+import FlexBox from '../components/flexbox'
 import { toast } from 'react-toastify'
 import ownerImg from '../images/owner.png'
 
