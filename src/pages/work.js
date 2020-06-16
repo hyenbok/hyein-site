@@ -87,7 +87,7 @@ const WorkPage = () => {
 
     console.log(data)
     return (
-        <Layout>
+        <>
             <SEO title="Work" />
             <Container>
                 <WorkWrapper>
@@ -111,7 +111,7 @@ const WorkPage = () => {
                     ))}
                 </WorkWrapper>
             </Container>
-        </Layout>
+        </>
     )
 }
 

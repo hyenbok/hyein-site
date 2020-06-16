@@ -213,7 +213,7 @@ const InfoPage = () => {
     }
 
     return (
-        <Layout>
+        <>
             <SEO title="Info" />
             <ContentWrapper>
                 <span className="bg-deco"></span>
@@ -326,7 +326,7 @@ const InfoPage = () => {
                     </Row>
                 </Container>
             </ContentWrapper>
-        </Layout>
+        </>
     )
 }
 

@@ -49,14 +49,14 @@ const IndexPage = () => {
     }, [])
 
     return (
-        <Layout>
+        <>
             <SEO title="Main" />
 
             <TextBox>
                 <p>Hello, I'm Hyein</p>
                 <p>Landscape designer</p>
             </TextBox>
-        </Layout>
+        </>
     )
 }
 

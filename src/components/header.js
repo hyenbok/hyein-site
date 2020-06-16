@@ -56,14 +56,17 @@ const Header = () => {
         {
             to: '/',
             label: 'Main',
+            partiallyActive: false,
         },
         {
             to: '/work',
             label: 'Work',
+            partiallyActive: true,
         },
         {
             to: '/info',
             label: 'Info',
+            partiallyActive: false,
         },
     ]
     return (
@@ -78,9 +81,10 @@ const Header = () => {
                         key={`${ele.label}-${idx}`}
                         to={ele.to}
                         activeClassName="active"
-                        partiallyActive={true}
+                        partiallyActive={ele.partiallyActive}
                         paintDrip
                         hex="#E7EAE4"
+                        onClick={() => setBurger(!isBurgerOpen)}
                     >
                         {ele.label}
                     </MenuWrapper>

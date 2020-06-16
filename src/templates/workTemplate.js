@@ -179,7 +179,7 @@ const WorkTemplate = props => {
     })
 
     return (
-        <Layout>
+        <>
             <SEO title="Work" />
             <Container>
                 <TemplateWrapper>
@@ -225,7 +225,7 @@ const WorkTemplate = props => {
                     </article>
                 </TemplateWrapper>
             </Container>
-        </Layout>
+        </>
     )
 }
 export default WorkTemplate

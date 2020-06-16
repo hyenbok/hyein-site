@@ -6,7 +6,19 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
-        `gatsby-plugin-transition-link`,
+        {
+            resolve: `gatsby-plugin-nprogress`,
+            options: {
+                color: `tomato`,
+                showSpinner: false,
+            },
+        },
+        {
+            resolve: 'gatsby-plugin-transition-link',
+            options: {
+                layout: require.resolve(`./src/components/layout.js`),
+            },
+        },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -20,8 +32,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `gatsby-starter-default`,
-                short_name: `starter`,
+                name: `hyein's portfolio`,
+                short_name: `hyein`,
                 start_url: `/`,
                 background_color: `#E7EAE4`,
                 theme_color: `#E7EAE4`,
@@ -31,6 +43,6 @@ module.exports = {
         },
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
-        // `gatsby-plugin-offline`,
+        `gatsby-plugin-offline`,
     ],
 }
