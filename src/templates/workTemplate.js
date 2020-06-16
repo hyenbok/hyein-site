@@ -90,7 +90,7 @@ const DescriptionWrapper = styled.article`
 const ZoomWrapper = styled.a`
     ${flexMC};
     cursor: pointer;
-    margin-top: 1.6rem;
+    padding: 1.6rem;
     span {
         display: inline-block;
         margin-left: 1rem;
