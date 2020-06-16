@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
@@ -45,9 +46,11 @@ const IndexPage = () => {
             document.body.classList.remove('has-bg')
         }
     }, [])
+
     return (
         <Layout>
-            <SEO title="Home" meta={[{ d: 'asfd', a: 'df' }]} />
+            <SEO title="Main" />
+
             <TextBox>
                 <p>Hello, I'm Hyein</p>
                 <p>Landscape designer</p>
