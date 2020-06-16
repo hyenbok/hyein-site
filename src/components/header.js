@@ -16,11 +16,13 @@ const MenuWrapper = styled(AniLink)`
     color: ${({ theme }) => theme.color.grey3};
     position: relative;
     transition: 0.2s color ease-in, 0.2s font-weight ease-in;
+    padding: 1rem 3rem;
     & ~ a {
-        margin-top: 5rem;
+        margin-top: 4rem;
     }
     @media (min-width: ${({ theme }) => theme.bp.md}px) {
         font-size: 1.6rem;
+        padding: 0;
         & ~ a {
             margin-top: 0;
             margin-left: 10rem;

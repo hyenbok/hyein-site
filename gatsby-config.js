@@ -7,13 +7,6 @@ module.exports = {
     plugins: [
         `gatsby-plugin-react-helmet`,
         {
-            resolve: `gatsby-plugin-nprogress`,
-            options: {
-                color: `tomato`,
-                showSpinner: false,
-            },
-        },
-        {
             resolve: 'gatsby-plugin-transition-link',
             options: {
                 layout: require.resolve(`./src/components/layout.js`),
