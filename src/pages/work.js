@@ -6,7 +6,6 @@ import { Container } from 'reactstrap'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { centerAlign } from '../assets/global'
-import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 const WorkWrapper = styled.ul`

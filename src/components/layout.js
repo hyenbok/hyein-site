@@ -10,6 +10,7 @@ import 'typeface-noto-serif-kr'
 import '../assets/normalize.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-toastify/dist/ReactToastify.css'
+import Loader from './loader'
 import Header from './header'
 
 const LayoutWrapper = styled.div`
@@ -33,6 +34,7 @@ const Layout = ({ children }) => {
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyles />
+            <Loader />
             <Header siteTitle={data.site.siteMetadata.title} />
             <LayoutWrapper>
                 <main>{children}</main>

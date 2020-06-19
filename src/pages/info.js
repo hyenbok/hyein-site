@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { Container, Col, Row, Spinner } from 'reactstrap'
-import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Input from '../components/input'
 import Textarea from '../components/textarea'
@@ -68,7 +67,7 @@ const ImgWrapper = styled.div`
     display: flex;
     justify-content: center;
 
-    .img-deco {
+    .owner-deco {
         position: relative;
 
         img {
@@ -93,7 +92,7 @@ const ImgWrapper = styled.div`
 
     @media (min-width: ${({ theme }) => theme.bp.md}px) {
         margin-top: 3.5rem;
-        .img-deco {
+        .owner-deco {
             display: table;
         }
     }
@@ -223,7 +222,7 @@ const InfoPage = () => {
                     <Row>
                         <Col className="m-pl-pr-none pl-none" xs="12" md="6">
                             <ImgWrapper>
-                                <span className="img-deco">
+                                <span className="owner-deco">
                                     <img
                                         src={ownerImg}
                                         alt="site owner image, holding plants, smiling"
