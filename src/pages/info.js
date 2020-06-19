@@ -7,7 +7,7 @@ import Textarea from '../components/textarea'
 import Button from '../components/button'
 import FlexBox from '../components/flexbox'
 import { toast } from 'react-toastify'
-import ownerImg from '../images/owner.png'
+import ownerImg from '../images/owner.jpg'
 
 const config = {
     script:
