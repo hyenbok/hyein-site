@@ -22,6 +22,10 @@ const GlobalStyles = createGlobalStyle`
       @media (min-width: ${({ theme }) => theme.bp.md}px) {
         background-image: url(${bg});
       }
+
+      @media (min-width: ${({ theme }) => theme.bp.xxlg}px) {
+        background-position: center center;
+      }
     }
   }
 

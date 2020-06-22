@@ -20,6 +20,7 @@ export const theme = {
         md: 768,
         lg: 992,
         xlg: 1200,
+        xxlg: 1600,
     },
 }
 
