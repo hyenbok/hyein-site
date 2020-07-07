@@ -89,24 +89,28 @@ const WorkPage = () => {
             <SEO title="Work" />
             <Container>
                 <WorkWrapper>
-                    {data.allFile.edges.map((image, idx) => (
-                        <Work key={image.node.base.split('.')[0]}>
-                            <AniLink
-                                to={`/work/product${
-                                    image.node.base.split('.')[0]
-                                }`}
-                            >
-                                <Img
-                                    fluid={image.node.childImageSharp.fluid}
-                                    alt={image.node.base.split('.')[0]}
-                                />
-                                <div className="work-detail">
-                                    <h2 className="title-num">#{idx + 1}</h2>
-                                    <h3 className="title">프로젝트 이름</h3>
-                                </div>
-                            </AniLink>
-                        </Work>
-                    ))}
+                    {data.allFile.edges
+                        .filter(it => !it.node.base.includes('-'))
+                        .map((image, idx) => (
+                            <Work key={image.node.base.split('.')[0]}>
+                                <AniLink
+                                    to={`/work/${
+                                        image.node.base.split('.')[0]
+                                    }`}
+                                >
+                                    <Img
+                                        fluid={image.node.childImageSharp.fluid}
+                                        alt={image.node.base.split('.')[0]}
+                                    />
+                                    <div className="work-detail">
+                                        <h2 className="title-num">
+                                            #{idx + 1}
+                                        </h2>
+                                        <h3 className="title">프로젝트 이름</h3>
+                                    </div>
+                                </AniLink>
+                            </Work>
+                        ))}
                 </WorkWrapper>
             </Container>
         </>

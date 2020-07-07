@@ -1,51 +1,32 @@
-- path: '/work/product1'
-  name: '프로젝트1'
-  date: '2020.06.16 - 2020.07.16'
-  description:
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-      in culpa qui officia deserunt mollit anim id est laborum.
-- path: '/work/product2'
-  name: '프로젝트2'
-  date: '2020.06.16 - 2020.07.16'
-  description:
-      22Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-      in culpa qui officia deserunt mollit anim id est laborum.
-- path: '/work/product3'
-  name: '프로젝트3'
-  date: '2020.06.16 - 2020.07.16'
-  description:
-      33Cupcake ipsum dolor sit amet tootsie roll sesame snaps chupa chups.
-      Sugar plum chupa chups topping I love carrot cake I love marshmallow dessert.
-      Toffee gingerbread pie apple pie jelly beans pastry cookie.
-      Lemon drops wafer I love pastry halvah dragée pudding cake.
-      Cake halvah cookie jelly beans topping pudding cheesecake donut.
-      Cake croissant marshmallow.
-      Sesame snaps apple pie I love I love cake danish powder.
-      Lollipop sweet caramels.
-      Tiramisu danish marshmallow candy canes.
-      Powder cupcake cotton candy bonbon chocolate bar marshmallow gummies cheesecake marzipan.
-      Gummies soufflé candy. Candy canes muffin chocolate brownie pudding.
-- path: '/work/product4'
-  name: '프로젝트4'
-  date: '2020.06.16 - 2020.07.16'
-  description:
-      Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh
-      semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette
-      vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr
-      humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue
-      bottle ennui tbh succulents.
-- path: '/work/product5'
-  name: '프로젝트5'
-  date: '2020.06.16 - 2020.07.16'
-  description: St. agur blue cheese queso cheesecake.
-      Cheesecake the big cheese monterey jack cheesecake monterey jack paneer halloumi rubber cheese.
-      Cheese triangles cheese strings cheese slices cheesy feet taleggio cottage cheese when the cheese comes out everybody's happy gouda.
-      Feta cauliflower cheese babybel cheese on toast monterey jack.
+- path: '/work/project1'
+  name: '정형식 설계'
+  date: '2020.03.23 - 2020.03.29'
+  description: '중부지방에 위치한 3층 미술관 건물 앞 18×22m 규모의 식재공간으로서 미술관에 출입하는 보행자의 시선이 집중되는 곳이므로, 아름답게 가꾸어야 한다.'
+- path: '/work/project2'
+  name: '자연풍경식 설계'
+  date: '2020.03.30 - 2020.04.05'
+  description: "영남 남부지방에 위치한 민가정원이다.\n\n1. 조성하고자 하는 정원부지는 1점 쇄선과 담장으로 둘러싸인 9.0m×22.0m이다.\n2. 부지는 전체적으로 평지이어서 지형의 변화가 없으나, 마루에서 바라보는 담장 밖은 구릉지와 연결되어 대나무 숲으로 이어지므로 차경(借景)의 효과가 양호하다."
+- path: '/work/project3'
+  name: '주택정원 설계'
+  date: '2020.04.06 - 2020.04.19'
+  description: '중부지방 주택지에 위치한 단층주택이며, 부지규모는 30.2×26,2m이다. '
+- path: '/work/project4'
+  name: '도시소공원 설계'
+  date: '2020.04.20 - 2020.05.10'
+  description: "서울도심에 위치하는 32.0m×22.0m 규모의 부지이다.\n북쪽(도면의 상단)은 20층 고층빌딩과 접하여 있고, 나머지는 3m 보도와 6m 차도로 둘러싸여 있다. 대상지는 도심 한가운데 위치하므로 보행인의 통행이 많고 번잡하며 소음이 심하다."
+- path: '/work/project5'
+  name: '도시소공원 설계'
+  date: '2020.04.20 - 2020.05.10'
+  description: "서울도심에 위치하는 32.0m×22.0m 규모의 부지이다.\n북쪽(도면의 상단)은 20층 고층빌딩과 접하여 있고, 나머지는 3m 보도와 6m 차도로 둘러싸여 있다.\n대상지는 도심 한가운데 위치하므로 보행인의 통행이 많고 번잡하며 소음이 심하다."
+- path: '/work/project6'
+  name: '도시소공원 설계'
+  date: '2020.05.11 - 2020.05.24'
+  description: "서울도심에 위치하는 32.0m×22.0m 규모의 부지이다.\n현황여건: 북쪽(도면의 상단)은 20층 고층빌딩과 접하여 있고, 나머지는 3m 보도와 6m 차도로 둘러싸여 있다. 대상지는 도심 한가운데 위치하므로 보행인의 통행이 많고 번잡하며 소음이 심하다."
+- path: '/work/project7'
+  name: '유치원조경 설계'
+  date: '2020.05.25 - 2020.06.07'
+  description: '서울에 위치한 유치원으로 33×28.5m규모의 부지이다.'
+- path: '/work/project8'
+  name: '어린이공원 설계'
+  date: '2020.06.08 - 2020.06.21'
+  description: "서울의 단독 주택단지 내 45x35m 규모의 부지이다. 8m 도로로 둘러싸여 있다.\n서울의 지하철역 주변 부지로, 이곳에 지하철 이용시민들을 위한 소공원을 설계할 계획이다."

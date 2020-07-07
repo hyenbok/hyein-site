@@ -15,7 +15,7 @@ import {
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { GoBack, Search } from '../components/icons'
-import { flexMC } from '../assets/global'
+import { flexMC, horizontalAlign } from '../assets/global'
 
 const TemplateWrapper = styled.div`
     min-height: calc(100vh - ${({ theme }) => theme.size.headerPc});
@@ -70,6 +70,7 @@ const DescriptionWrapper = styled.article`
         padding-top: 2.5rem;
         margin-top: 1.6rem;
         position: relative;
+        white-space: break-spaces;
 
         &:after {
             content: '';
@@ -88,6 +89,8 @@ const DescriptionWrapper = styled.article`
 
 const ZoomWrapper = styled.a`
     ${flexMC};
+    /* ${horizontalAlign};
+    bottom: 0; */
     cursor: pointer;
     padding: 1.6rem;
     span {
@@ -105,6 +108,8 @@ const WorkTemplate = props => {
     const { pageContext } = props
     const { name, date, description } = pageContext
 
+    console.log(description)
+
     const [activeIndex, setActiveIndex] = useState(0)
     const [animating, setAnimating] = useState(false)
 
@@ -114,7 +119,6 @@ const WorkTemplate = props => {
                 filter: {
                     extension: { regex: "/(jpg)|(png)|(jpeg)/" }
                     relativeDirectory: { eq: "works" }
-                    name: { eq: "5" }
                 }
             ) {
                 edges {
@@ -131,7 +135,12 @@ const WorkTemplate = props => {
         }
     `)
 
+    let pathArr = props.location.pathname.split('/')
+    pathArr = pathArr[pathArr.length - 1]
+
     images = images.allFile.edges
+        .filter(it => it.node.base.includes(pathArr))
+        .sort()
 
     const next = () => {
         if (animating) return
@@ -159,19 +168,23 @@ const WorkTemplate = props => {
                 onExited={() => setAnimating(false)}
                 key={item.node.base.split('.')[0]}
             >
-                <div style={{ width: '70% ', margin: '0 auto' }}>
+                <div style={{ height: 'auto' }}>
                     <Img
                         fluid={item.node.childImageSharp.fluid}
                         alt={item.node.base.split('.')[0]}
+                        style={{
+                            width: '70%',
+                            margin: '0 auto',
+                        }}
                     />
-                    <ZoomWrapper
-                        href={item.node.childImageSharp.fluid.src}
-                        target="_blank"
-                    >
-                        <Search />
-                        <span>zoom</span>
-                    </ZoomWrapper>
                 </div>
+                <ZoomWrapper
+                    href={item.node.childImageSharp.fluid.src}
+                    target="_blank"
+                >
+                    <Search />
+                    <span>zoom</span>
+                </ZoomWrapper>
             </CarouselItem>
         )
     })
@@ -193,6 +206,8 @@ const WorkTemplate = props => {
                                     activeIndex={activeIndex}
                                     next={next}
                                     previous={previous}
+                                    interval={false}
+                                    className="asdf"
                                 >
                                     {slides}
                                     <CarouselControl

@@ -72,6 +72,11 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
 
+  .gatsby-image-wrapper{
+    width: 100%;
+    height: 100%
+  }
+
   .container {
     & > .row {
       margin-left: 0;
@@ -138,4 +143,16 @@ const centerAlign = css`
     transform: translate(-50%, -50%);
 `
 
-export { GlobalStyles, flexMC, centerAlign }
+const verticalAlign = css`
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+`
+
+const horizontalAlign = css`
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+`
+
+export { GlobalStyles, flexMC, centerAlign, verticalAlign, horizontalAlign }
