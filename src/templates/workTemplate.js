@@ -138,9 +138,15 @@ const WorkTemplate = props => {
     let pathArr = props.location.pathname.split('/')
     pathArr = pathArr[pathArr.length - 1]
 
+    console.log(
+        images.allFile.edges.filter(it => it.node.base.includes(pathArr))
+    )
+
     images = images.allFile.edges
         .filter(it => it.node.base.includes(pathArr))
         .sort()
+
+    console.log(images)
 
     const next = () => {
         if (animating) return

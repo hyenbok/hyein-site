@@ -91,6 +91,15 @@ const WorkPage = () => {
                 <WorkWrapper>
                     {data.allFile.edges
                         .filter(it => !it.node.base.includes('-'))
+                        .sort(function (a, b) {
+                            if (a.node.base < b.node.base) {
+                                return -1
+                            }
+                            if (a.node.base > b.node.base) {
+                                return 1
+                            }
+                            return 0
+                        })
                         .map((image, idx) => (
                             <Work key={image.node.base.split('.')[0]}>
                                 <AniLink
