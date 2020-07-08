@@ -108,8 +108,6 @@ const WorkTemplate = props => {
     const { pageContext } = props
     const { name, date, description } = pageContext
 
-    console.log(description)
-
     const [activeIndex, setActiveIndex] = useState(0)
     const [animating, setAnimating] = useState(false)
 
@@ -138,15 +136,19 @@ const WorkTemplate = props => {
     let pathArr = props.location.pathname.split('/')
     pathArr = pathArr[pathArr.length - 1]
 
-    console.log(
-        images.allFile.edges.filter(it => it.node.base.includes(pathArr))
-    )
-
     images = images.allFile.edges
         .filter(it => it.node.base.includes(pathArr))
-        .sort()
-
-    console.log(images)
+        .sort(function (a, b) {
+            a = a.node.base.replace(/[,()-]/g, '')
+            b = b.node.base.replace(/[,()-]/g, '')
+            if (a < b) {
+                return -1
+            }
+            if (a > b) {
+                return 1
+            }
+            return 0
+        })
 
     const next = () => {
         if (animating) return
