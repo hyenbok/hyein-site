@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider } from 'styled-components'
@@ -21,6 +21,10 @@ const LayoutWrapper = styled.div`
 `
 
 const Layout = ({ children }) => {
+    useEffect(() => {
+        document.getElementsByTagName('html')[0].setAttribute('translate', 'no')
+    }, [])
+
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {
