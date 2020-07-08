@@ -68,6 +68,10 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  article {
+    width: 100%;
+  }
+
   p {
     margin: 0;
   }

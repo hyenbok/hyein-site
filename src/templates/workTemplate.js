@@ -12,7 +12,6 @@ import {
     CarouselItem,
     CarouselControl,
 } from 'reactstrap'
-import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { GoBack, Search } from '../components/icons'
 import { flexMC, horizontalAlign } from '../assets/global'
@@ -23,7 +22,7 @@ const TemplateWrapper = styled.div`
     position: relative;
     padding: 5rem 0;
 
-    @media (min-width: ${({ theme }) => theme.bp.md}) {
+    @media (min-width: ${({ theme }) => theme.bp.md}px) {
         padding: 3rem 0;
     }
 `
@@ -104,6 +103,18 @@ const ZoomWrapper = styled.a`
     }
 `
 
+const ImgWrapper = styled.div`
+    height: 22rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media (min-width: ${({ theme }) => theme.bp.lg}px) {
+        height: 31rem;
+    }
+`
+
 const WorkTemplate = props => {
     const { pageContext } = props
     const { name, date, description } = pageContext
@@ -176,23 +187,25 @@ const WorkTemplate = props => {
                 onExited={() => setAnimating(false)}
                 key={item.node.base.split('.')[0]}
             >
-                <div style={{ height: 'auto' }}>
+                <ImgWrapper>
                     <Img
                         fluid={item.node.childImageSharp.fluid}
                         alt={item.node.base.split('.')[0]}
                         style={{
                             width: '70%',
                             margin: '0 auto',
+                            height: 'auto',
                         }}
                     />
-                </div>
-                <ZoomWrapper
-                    href={item.node.childImageSharp.fluid.src}
-                    target="_blank"
-                >
-                    <Search />
-                    <span>zoom</span>
-                </ZoomWrapper>
+
+                    <ZoomWrapper
+                        href={item.node.childImageSharp.fluid.src}
+                        target="_blank"
+                    >
+                        <Search />
+                        <span>zoom</span>
+                    </ZoomWrapper>
+                </ImgWrapper>
             </CarouselItem>
         )
     })
