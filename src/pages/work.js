@@ -7,6 +7,7 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { centerAlign } from '../assets/global'
 import SEO from '../components/seo'
+import { works } from '../../content/works'
 
 const WorkWrapper = styled.ul`
     list-style-type: none;
@@ -115,7 +116,17 @@ const WorkPage = () => {
                                         <h2 className="title-num">
                                             #{idx + 1}
                                         </h2>
-                                        <h3 className="title">프로젝트 이름</h3>
+                                        <h3 className="title">
+                                            {`${
+                                                works.filter(it =>
+                                                    it.value.includes(
+                                                        image.node.base.split(
+                                                            '.'
+                                                        )[0]
+                                                    )
+                                                )[0].label
+                                            }`}
+                                        </h3>
                                     </div>
                                 </AniLink>
                             </Work>
