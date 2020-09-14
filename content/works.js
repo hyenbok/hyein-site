@@ -31,6 +31,10 @@ const works = [
         value: 'project8',
         label: '어린이공원 설계',
     },
+    {
+        value: 'project9',
+        label: '힐스토리 설계',
+    },
 ]
 
 export { works }
