@@ -85,16 +85,17 @@ const WorkPage = () => {
         }
     `)
 
+    const projectThumbnails = data.allFile.edges
+    .filter(it => !it.node.base.includes('-'))
+    .sort((a, b) => a.node.base - b.node.base)
+    .reverse()
+
     return (
         <>
             <SEO title="Work" />
             <Container>
                 <WorkWrapper>
-                    {data.allFile.edges
-                        .filter(it => !it.node.base.includes('-'))
-                        .sort((a, b) => a.node.base - b.node.base)
-                        .reverse()
-                        .map((image, idx) => (
+                    {projectThumbnails.map((image, idx) => (
                             <Work key={image.node.base.split('.')[0]}>
                                 <AniLink
                                     to={`/work/${
