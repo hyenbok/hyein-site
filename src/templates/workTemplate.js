@@ -134,7 +134,7 @@ const WorkTemplate = props => {
                     node {
                         base
                         childImageSharp {
-                            fluid {
+                            fluid (maxWidth: 1920) {
                                 ...GatsbyImageSharpFluid
                             }
                         }

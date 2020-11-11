@@ -35,6 +35,10 @@ const works = [
         value: 'project9',
         label: '힐스토리 설계',
     },
+    {
+        value: 'project10',
+        label: '제 5회 천안시 도시디자인 공모전 출품',
+    },
 ]
 
 export { works }
