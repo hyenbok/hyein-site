@@ -85,10 +85,9 @@ const WorkPage = () => {
         }
     `)
 
-    const projectThumbnails = data.allFile.edges
-    .filter(it => !it.node.base.includes('-'))
-    .sort((a, b) => a.node.base - b.node.base)
-    .reverse()
+    const collator = new Intl.Collator('en', { numeric: true, sensitivity: 'base' })
+
+    const projectThumbnails = data.allFile.edges.filter(it => !it.node.base.includes('-')).sort((a, b) => collator.compare(a.node.base, b.node.base)).reverse()
 
     return (
         <>
