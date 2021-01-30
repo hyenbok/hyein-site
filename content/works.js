@@ -39,6 +39,10 @@ const works = [
         value: 'project10',
         label: '제 5회 천안시 도시디자인 공모전 출품',
     },
+    {
+        value: 'project11',
+        label: '제 1회 그린 스마트 시티 공모전',
+    },
 ]
 
 export { works }
