@@ -20,6 +20,7 @@ const Work = styled.li`
     /* width: 100%; */
     cursor: pointer;
     width: 100%;
+    height: 21rem;
     padding: 1.5rem;
     position: relative;
 
