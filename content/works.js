@@ -46,7 +46,12 @@ const works = [
     {
         value: 'project12',
         label: '제 13회 대전광역시 공공디자인 공모전'
+    },
+    {
+        value: 'project13',
+        labe1: '원미죵 머쪙'
     }
+
 ]
 
 export { works }
